@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://776gdghe8ftc"]
+
+[ext_resource type="Script" path="res://scenes/sonar.gd" id="1_7wmg3"]
+[ext_resource type="Texture2D" uid="uid://bv28lq7jdpo8m" path="res://icon.svg" id="2_037k6"]
+
+[node name="Sonar" type="Node2D"]
+script = ExtResource("1_7wmg3")
+
+[node name="Ray" type="RayCast2D" parent="."]
+
+[node name="BlipTimer" type="Timer" parent="."]
+
+[node name="ScanTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Test_icon" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_037k6")
+
+[connection signal="timeout" from="BlipTimer" to="." method="_on_blip_timer_timeout"]
+[connection signal="timeout" from="ScanTimer" to="." method="_on_scan_timer_timeout"]

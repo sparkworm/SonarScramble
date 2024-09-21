@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c0lgvlork6ioo"
-path="res://.godot/imported/radar001.png-2128ca58af89e95ce56d3d2e8befeb57.ctex"
+path="res://.godot/imported/sonar001.png-2b081e7c5bffa08be6ca9191f436215c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://visuals/sprites/radar001.png"
-dest_files=["res://.godot/imported/radar001.png-2128ca58af89e95ce56d3d2e8befeb57.ctex"]
+source_file="res://visuals/sprites/sonar001.png"
+dest_files=["res://.godot/imported/sonar001.png-2b081e7c5bffa08be6ca9191f436215c.ctex"]
 
 [params]
 

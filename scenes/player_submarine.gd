@@ -3,7 +3,11 @@ extends CharacterBody2D
 
 @onready var velocity_component = $VelocityComponent
 
-func _physics_process(delta):
+func _process(_delta) -> void:
+	if Input.is_action_just_pressed("scan"):
+		MessageBus.player_scanned.emit()
+
+func _physics_process(delta) -> void:
 	velocity_component.velocity = velocity
 	velocity_component.apply_drag(delta)
 	velocity_component.apply_thrust(_get_movement_direction(), delta)

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cgy2wd1800pf0"
-path="res://.godot/imported/radar_blip.png-297fbe8df0a2107a8c6fa398b7d46930.ctex"
+path="res://.godot/imported/sonar_blip.png-521e32ffe5fa56dc793143ebe56a686e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://visuals/sprites/radar_blip.png"
-dest_files=["res://.godot/imported/radar_blip.png-297fbe8df0a2107a8c6fa398b7d46930.ctex"]
+source_file="res://visuals/sprites/sonar_blip.png"
+dest_files=["res://.godot/imported/sonar_blip.png-521e32ffe5fa56dc793143ebe56a686e.ctex"]
 
 [params]
 
