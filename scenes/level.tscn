@@ -33,3 +33,9 @@ size_flags_vertical = 4
 position = Vector2(150, 151)
 scale = Vector2(3, 3)
 sonar = NodePath("../../PlayerSubmarine/Sonar")
+
+[node name="WinZone" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 2
+
+[connection signal="body_entered" from="WinZone" to="." method="_on_win_area_body_entered"]
