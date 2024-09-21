@@ -1,11 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://c2vpdns2dicco"]
+[gd_scene load_steps=3 format=3 uid="uid://bket0bpc83r0a"]
 
-[ext_resource type="Script" path="res://scenes/game_scene.gd" id="1_pikg2"]
-[ext_resource type="Texture2D" uid="uid://bv28lq7jdpo8m" path="res://icon.svg" id="2_jjsjt"]
+[ext_resource type="PackedScene" uid="uid://mwyfe8vdrtsp" path="res://scenes/level.tscn" id="1_82x1o"]
+[ext_resource type="Texture2D" uid="uid://c0lgvlork6ioo" path="res://visuals/sprites/radar001.png" id="2_yu4ud"]
 
-[node name="TestLevel" type="Node"]
-script = ExtResource("1_pikg2")
+[node name="TestLevel" instance=ExtResource("1_82x1o")]
 
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(72, 23)
-texture = ExtResource("2_jjsjt")
+[node name="Sprite2D" type="Sprite2D" parent="." index="1"]
+texture = ExtResource("2_yu4ud")
