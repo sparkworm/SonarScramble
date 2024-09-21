@@ -5,6 +5,7 @@ extends Node2D
 @export var blip_scene: PackedScene
 @export var display_radius: int = 50
 @export var scale_factor: float = 3.0
+@export var blip_lifetime: float = 2.0
 
 func _ready():
 	sonar.blip_detected.connect(Callable(self, "draw_blip"))
@@ -12,7 +13,7 @@ func _ready():
 func draw_blip(pos: Vector2) -> void:
 	if (pos / scale_factor).length() <= display_radius:
 		var new_blip: Blip = blip_scene.instantiate()
-		new_blip.life_time = 1.0
+		new_blip.life_time = blip_lifetime
 		new_blip.position = Vector2i(pos / scale_factor)
 		add_child(new_blip)
 	else:
