@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2vpdns2dicco"]
+
+[ext_resource type="Script" path="res://scenes/game_scene.gd" id="1_pikg2"]
+[ext_resource type="Texture2D" uid="uid://bv28lq7jdpo8m" path="res://icon.svg" id="2_jjsjt"]
+
+[node name="TestLevel" type="Node"]
+script = ExtResource("1_pikg2")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(72, 23)
+texture = ExtResource("2_jjsjt")
