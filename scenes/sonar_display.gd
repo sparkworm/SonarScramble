@@ -3,7 +3,7 @@ extends Node2D
 
 @export var sonar: Sonar
 @export var blip_scene: PackedScene
-@export var display_radius: int = 50
+@export var display_radius: int = 48
 @export var scale_factor: float = 3.0
 @export var blip_lifetime: float = 2.0
 

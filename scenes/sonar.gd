@@ -6,9 +6,9 @@ signal blip_detected(pos: Vector2)
 ## the number of shots in a scan
 @export var num_shots: int = 36
 ## the length of a scan
-@export var scan_time: float = 2.0
+@export var scan_time: float = 1.5
 ## the distance of an individual raycast
-@export var ray_length: float = 300.0
+@export var ray_length: float = 150.0
 
 var is_scanning: bool = false
 
