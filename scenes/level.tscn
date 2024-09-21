@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://mwyfe8vdrtsp"]
+[gd_scene load_steps=3 format=3 uid="uid://mwyfe8vdrtsp"]
 
 [ext_resource type="Script" path="res://scenes/level.gd" id="1_jr5w7"]
+[ext_resource type="PackedScene" uid="uid://b54kub8caffbr" path="res://scenes/terrain.tscn" id="2_btskq"]
 
 [node name="Level" type="Node"]
 script = ExtResource("1_jr5w7")
@@ -8,4 +9,4 @@ script = ExtResource("1_jr5w7")
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
 
-[node name="Terrain" type="Node" parent="."]
+[node name="Terrain" parent="." instance=ExtResource("2_btskq")]
