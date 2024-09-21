@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://mwyfe8vdrtsp"]
+[gd_scene load_steps=4 format=3 uid="uid://mwyfe8vdrtsp"]
 
 [ext_resource type="Script" path="res://scenes/level.gd" id="1_jr5w7"]
 [ext_resource type="PackedScene" uid="uid://b54kub8caffbr" path="res://scenes/terrain.tscn" id="2_btskq"]
+[ext_resource type="PackedScene" uid="uid://gpiem0035mou" path="res://scenes/player_submarine.tscn" id="3_qdnrg"]
 
 [node name="Level" type="Node"]
 script = ExtResource("1_jr5w7")
@@ -10,3 +11,5 @@ script = ExtResource("1_jr5w7")
 zoom = Vector2(3, 3)
 
 [node name="Terrain" parent="." instance=ExtResource("2_btskq")]
+
+[node name="PlayerSubmarine" parent="." instance=ExtResource("3_qdnrg")]

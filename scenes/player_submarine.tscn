@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://gpiem0035mou"]
+
+[ext_resource type="Script" path="res://scenes/player_submarine.gd" id="1_hk7em"]
+[ext_resource type="Texture2D" uid="uid://da4mxbp5u4hla" path="res://visuals/sprites/submarine_icon.png" id="1_ji4e7"]
+[ext_resource type="Script" path="res://scenes/components/velocity_component.gd" id="2_ia2vt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4l6ka"]
+radius = 6.0
+
+[node name="PlayerSubmarine" type="CharacterBody2D"]
+script = ExtResource("1_hk7em")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_4l6ka")
+
+[node name="SubmarineIcon" type="Sprite2D" parent="."]
+texture = ExtResource("1_ji4e7")
+
+[node name="VelocityComponent" type="Node" parent="."]
+script = ExtResource("2_ia2vt")

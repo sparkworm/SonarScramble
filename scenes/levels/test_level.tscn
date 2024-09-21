@@ -1,9 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bket0bpc83r0a"]
+[gd_scene load_steps=2 format=4 uid="uid://bket0bpc83r0a"]
 
 [ext_resource type="PackedScene" uid="uid://mwyfe8vdrtsp" path="res://scenes/level.tscn" id="1_82x1o"]
-[ext_resource type="Texture2D" uid="uid://c0lgvlork6ioo" path="res://visuals/sprites/radar001.png" id="2_yu4ud"]
 
 [node name="TestLevel" instance=ExtResource("1_82x1o")]
 
-[node name="Sprite2D" type="Sprite2D" parent="." index="1"]
-texture = ExtResource("2_yu4ud")
+[node name="Terrain" parent="." index="1"]
+tile_map_data = PackedByteArray("AAAFAAIAAAABAAMAAAAEAAIAAAAEAAQAAAADAAIAAAADAAMAAAACAAIAAAAEAAQAAAABAAIAAAAEAAQAAAAAAAIAAAAEAAQAAAD//wIAAAAEAAQAAAD+/wIAAAAEAAQAAAD9/wIAAAAEAAQAAAD8/wIAAAAEAAQAAAD7/wIAAAAEAAQAAAD6/wIAAAAAAAIAAAADAAAAAAADAAAAAAADAAEAAAAAAAEAAAAEAAAAAAAEAAEAAAAEAP//AAAAAAEAAAAEAP7/AAABAAIAAAA=")
