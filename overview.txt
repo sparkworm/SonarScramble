@@ -1,0 +1,11 @@
+Welcome to Memory Maze!
+
+In this game, the player is given a "glance" at a maze they must navigate 
+through.  This glace only lasts about a second, so they must memorize the path 
+through the maze as well as any hazards that they might encounter.  They might
+be given additional glances, but these would cost them score.
+
+The player is piloting a submarine, with the "glances" consisting of radar blips
+each of which costs energy to produce.  The player is rewarded for using fewer, 
+but they are punished for running into anything, so they must balance to 
+achieve a good score.
