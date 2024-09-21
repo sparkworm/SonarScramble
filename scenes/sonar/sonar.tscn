@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://776gdghe8ftc"]
 
-[ext_resource type="Script" path="res://scenes/sonar.gd" id="1_7wmg3"]
+[ext_resource type="Script" path="res://scenes/sonar/sonar.gd" id="1_7wmg3"]
 [ext_resource type="Texture2D" uid="uid://bv28lq7jdpo8m" path="res://icon.svg" id="2_037k6"]
 
 [node name="Sonar" type="Node2D"]
