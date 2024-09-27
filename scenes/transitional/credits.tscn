@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkvn7iygpv3o7"]
+
+[ext_resource type="Script" path="res://scenes/transitional/credits.gd" id="1_1fedi"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_thjlx"]
+line_spacing = 30.0
+font_size = 24
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 0.854902)
+
+[node name="Credits" type="Node"]
+script = ExtResource("1_1fedi")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/PanelContainer"]
+layout_mode = 2
+
+[node name="Credits" type="Label" parent="Control/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Credits:
+
+Project Management: David Clutter
+Concept: David Clutter
+Programming: David Clutter
+Design: David Clutter
+Art: David Clutter ???
+Sound effects: ???
+Music: ???
+"
+label_settings = SubResource("LabelSettings_thjlx")
+horizontal_alignment = 1
