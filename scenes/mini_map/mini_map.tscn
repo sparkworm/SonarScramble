@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://c8v4yy2ny8l62"]
+
+[ext_resource type="Script" path="res://scenes/mini_map/mini_map.gd" id="1_ri15m"]
+[ext_resource type="Texture2D" uid="uid://bkdpe2hgjwk85" path="res://visuals/sprites/flag.png" id="3_byahr"]
+[ext_resource type="Texture2D" uid="uid://da4mxbp5u4hla" path="res://visuals/sprites/submarine_icon.png" id="3_qwcnp"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_uljl3"]
+viewport_path = NodePath("MiniMap")
+
+[node name="MiniMap" type="TextureRect"]
+texture = SubResource("ViewportTexture_uljl3")
+script = ExtResource("1_ri15m")
+
+[node name="MiniMap" type="SubViewport" parent="."]
+disable_3d = true
+transparent_bg = true
+canvas_item_default_texture_filter = 0
+size = Vector2i(128, 128)
+render_target_update_mode = 4
+
+[node name="Player" type="Sprite2D" parent="MiniMap"]
+texture = ExtResource("3_qwcnp")
+
+[node name="Camera" type="Camera2D" parent="MiniMap/Player"]
+zoom = Vector2(2, 2)
+
+[node name="Destination" type="Sprite2D" parent="MiniMap"]
+texture = ExtResource("3_byahr")
+
+[node name="UpdateTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="UpdateTimer" to="." method="_on_update_timer_timeout"]

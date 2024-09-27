@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgprr62q3j3pa"]
+
+[ext_resource type="Texture2D" uid="uid://cgy2wd1800pf0" path="res://visuals/sprites/sonar_blip.png" id="1_mlhrh"]
+
+[node name="MiniMapIcon" type="Sprite2D"]
+texture = ExtResource("1_mlhrh")

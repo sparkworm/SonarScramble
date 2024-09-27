@@ -1,10 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://mwyfe8vdrtsp"]
+[gd_scene load_steps=8 format=3 uid="uid://mwyfe8vdrtsp"]
 
 [ext_resource type="Script" path="res://scenes/inherited/level.gd" id="1_jr5w7"]
 [ext_resource type="PackedScene" uid="uid://b54kub8caffbr" path="res://scenes/terrain.tscn" id="2_btskq"]
 [ext_resource type="PackedScene" uid="uid://gpiem0035mou" path="res://scenes/entities/player_submarine.tscn" id="3_qdnrg"]
 [ext_resource type="PackedScene" uid="uid://776gdghe8ftc" path="res://scenes/sonar/sonar.tscn" id="4_pa7re"]
 [ext_resource type="PackedScene" uid="uid://pfxbewe666f6" path="res://scenes/sonar/sonar_display.tscn" id="5_fqigm"]
+[ext_resource type="PackedScene" uid="uid://c8v4yy2ny8l62" path="res://scenes/mini_map/mini_map.tscn" id="5_qv5xm"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ejtbe"]
+viewport_path = NodePath("MiniMap")
 
 [node name="Level" type="Node"]
 script = ExtResource("1_jr5w7")
@@ -22,15 +26,30 @@ zoom = Vector2(3, 3)
 
 [node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-grow_vertical = 2
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+grow_horizontal = 0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
+[node name="Panel" type="PanelContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+
+[node name="MiniMap" parent="CanvasLayer/Control/Panel" node_paths=PackedStringArray("player", "destination") instance=ExtResource("5_qv5xm")]
+layout_mode = 2
+texture = SubResource("ViewportTexture_ejtbe")
+player = NodePath("../../../../PlayerSubmarine")
+destination = NodePath("../../../../WinZone")
+
 [node name="SonarDisplay" parent="CanvasLayer" node_paths=PackedStringArray("sonar") instance=ExtResource("5_fqigm")]
-position = Vector2(150, 151)
+position = Vector2(150, 150)
 scale = Vector2(3, 3)
 sonar = NodePath("../../PlayerSubmarine/Sonar")
 
