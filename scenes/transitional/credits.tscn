@@ -32,8 +32,9 @@ layout_mode = 2
 
 [node name="Credits" type="Label" parent="Control/PanelContainer/VBoxContainer"]
 layout_mode = 2
-text = "Credits:
+text = "Congratulations, you won!
 
+Credits:
 Project Management: David Clutter
 Concept: David Clutter
 Programming: David Clutter
