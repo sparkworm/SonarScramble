@@ -8,6 +8,8 @@
 radius = 6.0
 
 [node name="PlayerSubmarine" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 7
 script = ExtResource("1_hk7em")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

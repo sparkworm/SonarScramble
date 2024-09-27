@@ -1,3 +1,4 @@
+class_name MiniMap
 extends TextureRect
 
 ## the amount of time that is waited between updates

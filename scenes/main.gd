@@ -14,6 +14,7 @@ func _ready() -> void:
 
 ## Changes the current scene to the specified scene.
 func change_game_scene(new_scene: PackedScene) -> void:
-	current_scene_parent.remove_child(current_scene)
+	#current_scene_parent.remove_child(current_scene)
+	current_scene_parent.get_child(0).queue_free()
 	var initialized_scene: GameScene = new_scene.instantiate()
-	current_scene_parent.add_child(initialized_scene)
+	current_scene_parent.call_deferred("add_child", initialized_scene)
