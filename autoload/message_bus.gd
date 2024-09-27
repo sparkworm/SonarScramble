@@ -4,3 +4,5 @@ extends Node
 signal game_scene_changed(new_scene: PackedScene)
 @warning_ignore("unused_signal")
 signal player_scanned()
+@warning_ignore("unused_signal")
+signal quit_game()
