@@ -15,7 +15,7 @@ func _ready():
 	sonar.blip_detected.connect(Callable(self, "draw_blip"))
 	scan_line.points[1].x = min(sonar.ray_length / scale_factor, display_radius)
 
-func _process(delta) -> void:
+func _process(_delta) -> void:
 	if sonar.is_scanning:
 		scan_line.rotation = sonar.ray.rotation
 

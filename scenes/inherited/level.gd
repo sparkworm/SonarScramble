@@ -2,7 +2,7 @@
 class_name Level
 extends GameScene
 
-var minimap_scene: PackedScene = preload("res://scenes/mini_map/mini_map.tscn")
+#var minimap_scene: PackedScene = preload("res://scenes/mini_map/mini_map.tscn")
 
 ## The player
 @onready var player_submarine = $PlayerSubmarine
@@ -23,15 +23,16 @@ func _process(_delta) -> void:
 	if Input.is_action_just_pressed("menu"):
 		# TODO:  Make the game actuall pause
 		MessageBus.pause_menu_toggled.emit()
-
+"""
+## DEPRECATED
 func _initialize_minimap() -> void:
 	var minimap: MiniMap = minimap_scene.instantiate()
 	minimap.player = player_submarine
 	minimap.destination = win_zone
 	$CanvasLayer/Control/Panel.add_child(minimap)
+"""
 
 ## called when something enters the win zone
-## DEPRECATED
 func _on_win_area_body_entered(body):
 	if body == player_submarine:
 		print("level won!")

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://3d1bx4l8ymr8"]
+[gd_scene load_steps=5 format=3 uid="uid://3d1bx4l8ymr8"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_pm0q6"]
 [ext_resource type="PackedScene" uid="uid://dhiyq3vdqtigr" path="res://scenes/transitional/main_menu.tscn" id="2_ik4dj"]
 [ext_resource type="PackedScene" uid="uid://b6s8t0kcnu8e1" path="res://scenes/ui/pause_menu.tscn" id="4_1rv61"]
+[ext_resource type="PackedScene" uid="uid://fn3ni7n87hm2" path="res://scenes/transitional/scene_transition.tscn" id="4_ajpai"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_pm0q6")
@@ -11,10 +12,10 @@ script = ExtResource("1_pm0q6")
 
 [node name="MainMenu" parent="CurrentSceneParent" instance=ExtResource("2_ik4dj")]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="UILayer" type="CanvasLayer" parent="."]
 layer = 2
 
-[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("4_1rv61")]
+[node name="PauseMenu" parent="UILayer" instance=ExtResource("4_1rv61")]
 unique_name_in_owner = true
 visible = false
 anchors_preset = 8
@@ -22,3 +23,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
+
+[node name="TransitionLayer" type="CanvasLayer" parent="."]
+layer = 3
+
+[node name="SceneTransition" parent="TransitionLayer" instance=ExtResource("4_ajpai")]
+unique_name_in_owner = true
