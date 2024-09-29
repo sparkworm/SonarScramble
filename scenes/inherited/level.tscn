@@ -42,24 +42,24 @@ grow_horizontal = 2
 size_flags_horizontal = 3
 theme = ExtResource("5_curqo")
 
-[node name="GuagesContainer" type="PanelContainer" parent="CanvasLayer/VBoxContainer"]
+[node name="GaugesContainer" type="PanelContainer" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("5_curqo")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer/GuagesContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer/GaugesContainer"]
 layout_mode = 2
 
-[node name="Speedometer" parent="CanvasLayer/VBoxContainer/GuagesContainer/HBoxContainer" node_paths=PackedStringArray("player") instance=ExtResource("7_qgi4t")]
+[node name="Speedometer" parent="CanvasLayer/VBoxContainer/GaugesContainer/HBoxContainer" node_paths=PackedStringArray("player") instance=ExtResource("7_qgi4t")]
 layout_mode = 2
 size_flags_horizontal = 3
 player = NodePath("../../../../../PlayerSubmarine")
 
-[node name="SonarDisplay" parent="CanvasLayer/VBoxContainer/GuagesContainer/HBoxContainer" node_paths=PackedStringArray("sonar") instance=ExtResource("5_fqigm")]
+[node name="SonarDisplay" parent="CanvasLayer/VBoxContainer/GaugesContainer/HBoxContainer" node_paths=PackedStringArray("sonar") instance=ExtResource("5_fqigm")]
 layout_mode = 2
 size_flags_horizontal = 3
 sonar = NodePath("../../../../../PlayerSubmarine/Sonar")
 
-[node name="MiniMap" parent="CanvasLayer/VBoxContainer/GuagesContainer/HBoxContainer" node_paths=PackedStringArray("player", "destination") instance=ExtResource("8_h7tdx")]
+[node name="MiniMap" parent="CanvasLayer/VBoxContainer/GaugesContainer/HBoxContainer" node_paths=PackedStringArray("player", "destination") instance=ExtResource("8_h7tdx")]
 layout_mode = 2
 size_flags_horizontal = 3
 texture = SubResource("ViewportTexture_hjbyk")
