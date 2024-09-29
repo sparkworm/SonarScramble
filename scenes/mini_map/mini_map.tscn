@@ -21,7 +21,6 @@ size = Vector2i(128, 128)
 texture = ExtResource("3_qwcnp")
 
 [node name="Camera" type="Camera2D" parent="MiniMap/Player"]
-zoom = Vector2(2, 2)
 
 [node name="Destination" type="Sprite2D" parent="MiniMap"]
 texture = ExtResource("3_byahr")

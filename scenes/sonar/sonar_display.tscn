@@ -4,9 +4,18 @@
 [ext_resource type="Texture2D" uid="uid://c0lgvlork6ioo" path="res://visuals/sprites/sonar001.png" id="2_68j8x"]
 [ext_resource type="PackedScene" uid="uid://bgqbbdpg1s1v1" path="res://scenes/sonar/blip.tscn" id="2_fgvro"]
 
-[node name="SonarDisplay" type="Node2D"]
+[node name="SonarDisplay" type="Control"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_32klr")
 blip_scene = ExtResource("2_fgvro")
+scale_factor = 2.0
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Display" type="Node2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(100, 100)
+scale = Vector2(2, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="Display"]
 texture = ExtResource("2_68j8x")

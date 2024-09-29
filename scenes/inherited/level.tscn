@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://mwyfe8vdrtsp"]
+[gd_scene load_steps=7 format=3 uid="uid://mwyfe8vdrtsp"]
 
 [ext_resource type="Script" path="res://scenes/inherited/level.gd" id="1_jr5w7"]
 [ext_resource type="PackedScene" uid="uid://b54kub8caffbr" path="res://scenes/terrain.tscn" id="2_btskq"]
 [ext_resource type="PackedScene" uid="uid://gpiem0035mou" path="res://scenes/entities/player_submarine.tscn" id="3_qdnrg"]
 [ext_resource type="PackedScene" uid="uid://776gdghe8ftc" path="res://scenes/sonar/sonar.tscn" id="4_pa7re"]
+[ext_resource type="Theme" uid="uid://bfx602mu5pdlo" path="res://visuals/ui/ui_theme.tres" id="5_curqo"]
 [ext_resource type="PackedScene" uid="uid://pfxbewe666f6" path="res://scenes/sonar/sonar_display.tscn" id="5_fqigm"]
 
 [node name="Level" type="Node"]
@@ -38,10 +39,22 @@ offset_left = -40.0
 offset_bottom = 40.0
 grow_horizontal = 0
 
-[node name="SonarDisplay" parent="CanvasLayer" node_paths=PackedStringArray("sonar") instance=ExtResource("5_fqigm")]
-position = Vector2(150, 150)
-scale = Vector2(3, 3)
-sonar = NodePath("../../PlayerSubmarine/Sonar")
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -55.0
+offset_top = -110.0
+offset_right = 55.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("5_curqo")
+
+[node name="SonarDisplay" parent="CanvasLayer/PanelContainer" node_paths=PackedStringArray("sonar") instance=ExtResource("5_fqigm")]
+layout_mode = 2
+sonar = NodePath("../../../PlayerSubmarine/Sonar")
 
 [node name="WinZone" type="Area2D" parent="."]
 collision_layer = 16

@@ -20,6 +20,13 @@ config/icon="res://icon.svg"
 Globals="*res://autoload/globals.gd"
 MessageBus="*res://autoload/message_bus.gd"
 
+[display]
+
+window/size/viewport_width=480
+window/size/viewport_height=270
+window/size/mode=3
+window/stretch/mode="canvas_items"
+
 [input]
 
 move_up={
