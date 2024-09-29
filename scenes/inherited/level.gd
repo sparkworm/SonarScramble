@@ -16,7 +16,8 @@ var minimap_scene: PackedScene = preload("res://scenes/mini_map/mini_map.tscn")
 @export var next_level: PackedScene
 
 func _ready() -> void:
-	_initialize_minimap()
+	#_initialize_minimap()
+	pass
 
 func _process(_delta) -> void:
 	if Input.is_action_just_pressed("menu"):
@@ -30,6 +31,7 @@ func _initialize_minimap() -> void:
 	$CanvasLayer/Control/Panel.add_child(minimap)
 
 ## called when something enters the win zone
+## DEPRECATED
 func _on_win_area_body_entered(body):
 	if body == player_submarine:
 		print("level won!")

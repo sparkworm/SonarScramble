@@ -9,9 +9,9 @@ extends TextureRect
 @export var scale_factor: float = 10
 #@export var other_locations: Array[Node2D] # currently unused
 
-@onready var player_icon: Sprite2D = $MiniMap/Player
-@onready var destination_icon: Sprite2D = $MiniMap/Destination
-@onready var update_timer: Timer = $UpdateTimer
+@onready var player_icon: Sprite2D = %Player
+@onready var destination_icon: Sprite2D = %Destination
+@onready var update_timer: Timer = %UpdateTimer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

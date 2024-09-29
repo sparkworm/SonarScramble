@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://c8v4yy2ny8l62"]
+[gd_scene load_steps=6 format=3 uid="uid://c8v4yy2ny8l62"]
 
 [ext_resource type="Script" path="res://scenes/mini_map/mini_map.gd" id="1_ri15m"]
 [ext_resource type="Texture2D" uid="uid://bkdpe2hgjwk85" path="res://visuals/sprites/flag.png" id="3_byahr"]
 [ext_resource type="Texture2D" uid="uid://da4mxbp5u4hla" path="res://visuals/sprites/submarine_icon.png" id="3_qwcnp"]
+[ext_resource type="Texture2D" uid="uid://cgl6t8apyvlis" path="res://visuals/sprites/minimap001.png" id="4_i54c4"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_uljl3"]
 viewport_path = NodePath("MiniMap")
@@ -15,16 +16,29 @@ script = ExtResource("1_ri15m")
 disable_3d = true
 transparent_bg = true
 canvas_item_default_texture_filter = 0
-size = Vector2i(128, 128)
+size = Vector2i(127, 127)
 
-[node name="Player" type="Sprite2D" parent="MiniMap"]
+[node name="IconLayer" type="CanvasLayer" parent="MiniMap"]
+follow_viewport_enabled = true
+
+[node name="Player" type="Sprite2D" parent="MiniMap/IconLayer"]
+unique_name_in_owner = true
 texture = ExtResource("3_qwcnp")
 
-[node name="Camera" type="Camera2D" parent="MiniMap/Player"]
+[node name="Camera" type="Camera2D" parent="MiniMap/IconLayer/Player"]
 
-[node name="Destination" type="Sprite2D" parent="MiniMap"]
+[node name="Destination" type="Sprite2D" parent="MiniMap/IconLayer"]
+unique_name_in_owner = true
 texture = ExtResource("3_byahr")
 
+[node name="BackgroundLayer" type="CanvasLayer" parent="MiniMap"]
+layer = 0
+
+[node name="Background" type="Sprite2D" parent="MiniMap/BackgroundLayer"]
+texture = ExtResource("4_i54c4")
+offset = Vector2(63.5, 63.5)
+
 [node name="UpdateTimer" type="Timer" parent="."]
+unique_name_in_owner = true
 
 [connection signal="timeout" from="UpdateTimer" to="." method="_on_update_timer_timeout"]
