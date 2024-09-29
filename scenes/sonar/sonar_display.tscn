@@ -19,3 +19,13 @@ scale = Vector2(2, 2)
 
 [node name="Sprite2D" type="Sprite2D" parent="Display"]
 texture = ExtResource("2_68j8x")
+
+[node name="ScanLine" type="Line2D" parent="Display"]
+unique_name_in_owner = true
+points = PackedVector2Array(0, 0, 20.47, 0)
+width = 1.0
+default_color = Color(0, 1, 0, 0.694118)
+begin_cap_mode = 1
+
+[node name="Blips" type="Node2D" parent="Display"]
+unique_name_in_owner = true
