@@ -1,16 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://gpiem0035mou"]
+[gd_scene load_steps=6 format=3 uid="uid://gpiem0035mou"]
 
 [ext_resource type="Script" path="res://scenes/entities/player_submarine.gd" id="1_hk7em"]
 [ext_resource type="Texture2D" uid="uid://da4mxbp5u4hla" path="res://visuals/sprites/submarine_icon.png" id="1_ji4e7"]
 [ext_resource type="Script" path="res://scenes/components/velocity_component.gd" id="2_ia2vt"]
+[ext_resource type="PackedScene" uid="uid://bjuall2ufymh3" path="res://scenes/ui/key_press_controller.tscn" id="4_ed8ep"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4l6ka"]
 radius = 6.0
 
-[node name="PlayerSubmarine" type="CharacterBody2D"]
+[node name="PlayerSubmarine" type="CharacterBody2D" node_paths=PackedStringArray("controllers")]
 collision_layer = 2
 collision_mask = 7
 script = ExtResource("1_hk7em")
+controllers = [NodePath("KeyPressController")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_4l6ka")
@@ -20,3 +22,5 @@ texture = ExtResource("1_ji4e7")
 
 [node name="VelocityComponent" type="Node" parent="."]
 script = ExtResource("2_ia2vt")
+
+[node name="KeyPressController" parent="." instance=ExtResource("4_ed8ep")]

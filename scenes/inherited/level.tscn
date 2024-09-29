@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://mwyfe8vdrtsp"]
+[gd_scene load_steps=11 format=3 uid="uid://mwyfe8vdrtsp"]
 
 [ext_resource type="Script" path="res://scenes/inherited/level.gd" id="1_jr5w7"]
 [ext_resource type="PackedScene" uid="uid://b54kub8caffbr" path="res://scenes/terrain.tscn" id="2_btskq"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://pfxbewe666f6" path="res://scenes/sonar/sonar_display.tscn" id="5_fqigm"]
 [ext_resource type="PackedScene" uid="uid://c4y1sqkdcd530" path="res://scenes/speedometer/speedometer.tscn" id="7_qgi4t"]
 [ext_resource type="PackedScene" uid="uid://c8v4yy2ny8l62" path="res://scenes/mini_map/mini_map.tscn" id="8_h7tdx"]
+[ext_resource type="PackedScene" uid="uid://t4mk5g5rw1eo" path="res://scenes/ui/movement_keys_controller.tscn" id="9_snufi"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_hjbyk"]
 viewport_path = NodePath("MiniMap")
@@ -22,40 +23,56 @@ zoom = Vector2(3, 3)
 [node name="Terrain" parent="." instance=ExtResource("2_btskq")]
 visible = false
 
-[node name="PlayerSubmarine" parent="." instance=ExtResource("3_qdnrg")]
+[node name="PlayerSubmarine" parent="." node_paths=PackedStringArray("controllers") instance=ExtResource("3_qdnrg")]
 visible = false
+controllers = [NodePath("KeyPressController"), NodePath("../CanvasLayer/VBoxContainer/HBoxContainer/MovementKeys")]
 
 [node name="Sonar" parent="PlayerSubmarine" instance=ExtResource("4_pa7re")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 216.0
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -225.5
+offset_right = 225.5
+offset_bottom = 266.0
 grow_horizontal = 2
+size_flags_horizontal = 3
 theme = ExtResource("5_curqo")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/PanelContainer"]
+[node name="GuagesContainer" type="PanelContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("5_curqo")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer/GuagesContainer"]
 layout_mode = 2
 
-[node name="Speedometer" parent="CanvasLayer/PanelContainer/HBoxContainer" node_paths=PackedStringArray("player") instance=ExtResource("7_qgi4t")]
+[node name="Speedometer" parent="CanvasLayer/VBoxContainer/GuagesContainer/HBoxContainer" node_paths=PackedStringArray("player") instance=ExtResource("7_qgi4t")]
 layout_mode = 2
 size_flags_horizontal = 3
-player = NodePath("../../../../PlayerSubmarine")
+player = NodePath("../../../../../PlayerSubmarine")
 
-[node name="SonarDisplay" parent="CanvasLayer/PanelContainer/HBoxContainer" node_paths=PackedStringArray("sonar") instance=ExtResource("5_fqigm")]
+[node name="SonarDisplay" parent="CanvasLayer/VBoxContainer/GuagesContainer/HBoxContainer" node_paths=PackedStringArray("sonar") instance=ExtResource("5_fqigm")]
 layout_mode = 2
 size_flags_horizontal = 3
-sonar = NodePath("../../../../PlayerSubmarine/Sonar")
+sonar = NodePath("../../../../../PlayerSubmarine/Sonar")
 
-[node name="MiniMap" parent="CanvasLayer/PanelContainer/HBoxContainer" node_paths=PackedStringArray("player", "destination") instance=ExtResource("8_h7tdx")]
+[node name="MiniMap" parent="CanvasLayer/VBoxContainer/GuagesContainer/HBoxContainer" node_paths=PackedStringArray("player", "destination") instance=ExtResource("8_h7tdx")]
 layout_mode = 2
 size_flags_horizontal = 3
 texture = SubResource("ViewportTexture_hjbyk")
 stretch_mode = 3
-player = NodePath("../../../../PlayerSubmarine")
-destination = NodePath("../../../../WinZone")
+player = NodePath("../../../../../PlayerSubmarine")
+destination = NodePath("../../../../../WinZone")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="MovementKeys" parent="CanvasLayer/VBoxContainer/HBoxContainer" instance=ExtResource("9_snufi")]
+layout_mode = 2
 
 [node name="WinZone" type="Area2D" parent="."]
 visible = false

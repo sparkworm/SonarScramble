@@ -1,6 +1,8 @@
 class_name PlayerSubmarine
 extends CharacterBody2D
 
+@export var controllers: Array[MovementController]
+
 @onready var velocity_component = $VelocityComponent
 
 func _process(_delta) -> void:
@@ -14,6 +16,10 @@ func _physics_process(delta) -> void:
 	velocity = velocity_component.velocity
 	move_and_slide()
 
-## Private function to determine the direction that the sub should be moving based on the inputs
+## Private function to determine the direction that the sub should be moving 
+## based on the inputs of all possible controllers
 func _get_movement_direction() -> Vector2:
-	return Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	var direction: Vector2 = Vector2.ZERO
+	for controller in controllers:
+		direction += controller.get_direction()
+	return direction.normalized()
