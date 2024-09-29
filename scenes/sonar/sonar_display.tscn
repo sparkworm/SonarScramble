@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://pfxbewe666f6"]
+[gd_scene load_steps=5 format=3 uid="uid://pfxbewe666f6"]
 
 [ext_resource type="Script" path="res://scenes/sonar/sonar_display.gd" id="1_32klr"]
 [ext_resource type="Texture2D" uid="uid://c0lgvlork6ioo" path="res://visuals/sprites/sonar001.png" id="2_68j8x"]
 [ext_resource type="PackedScene" uid="uid://bgqbbdpg1s1v1" path="res://scenes/sonar/blip.tscn" id="2_fgvro"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_rv881"]
+viewport_path = NodePath("CanvasLayer")
 
 [node name="SonarDisplay" type="Control"]
 custom_minimum_size = Vector2(200, 200)
@@ -12,20 +15,30 @@ script = ExtResource("1_32klr")
 blip_scene = ExtResource("2_fgvro")
 scale_factor = 2.0
 
-[node name="Display" type="Node2D" parent="."]
-unique_name_in_owner = true
-position = Vector2(100, 100)
-scale = Vector2(2, 2)
+[node name="CanvasLayer" type="SubViewport" parent="."]
+disable_3d = true
+transparent_bg = true
+canvas_item_default_texture_filter = 0
+size = Vector2i(100, 100)
 
-[node name="Sprite2D" type="Sprite2D" parent="Display"]
+[node name="Display" type="Node2D" parent="CanvasLayer"]
+unique_name_in_owner = true
+position = Vector2(50, 50)
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Display"]
 texture = ExtResource("2_68j8x")
 
-[node name="ScanLine" type="Line2D" parent="Display"]
+[node name="ScanLine" type="Line2D" parent="CanvasLayer/Display"]
 unique_name_in_owner = true
 points = PackedVector2Array(0, 0, 20.47, 0)
 width = 1.0
 default_color = Color(0, 1, 0, 0.694118)
 begin_cap_mode = 1
 
-[node name="Blips" type="Node2D" parent="Display"]
+[node name="Blips" type="Node2D" parent="CanvasLayer/Display"]
 unique_name_in_owner = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(100, 100)
+scale = Vector2(2, 2)
+texture = SubResource("ViewportTexture_rv881")
