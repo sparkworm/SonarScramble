@@ -1,11 +1,17 @@
-[gd_scene load_steps=2 format=4 uid="uid://bket0bpc83r0a"]
+[gd_scene load_steps=3 format=4 uid="uid://bket0bpc83r0a"]
 
 [ext_resource type="PackedScene" uid="uid://mwyfe8vdrtsp" path="res://scenes/inherited/level.tscn" id="1_82x1o"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_hjbyk"]
+viewport_path = NodePath("MiniMap")
 
 [node name="TestLevel" instance=ExtResource("1_82x1o")]
 
 [node name="Terrain" parent="." index="1"]
 tile_map_data = PackedByteArray("AAAFAAIAAAABAAMAAAAEAAIAAAAEAAQAAAADAAIAAAADAAMAAAACAAIAAAAEAAQAAAABAAIAAAAEAAQAAAAAAAIAAAAEAAQAAAD//wIAAAAEAAQAAAD+/wIAAAAEAAQAAAD9/wIAAAAEAAQAAAD8/wIAAAAEAAQAAAD7/wIAAAAEAAQAAAD6/wIAAAAAAAIAAAADAAAAAAADAAAAAAADAAEAAAAAAAEAAAAEAAAAAAAEAAEAAAAEAP//AAAAAAEAAAAEAP7/AAABAAIAAAA=")
+
+[node name="MiniMap" parent="CanvasLayer/VBoxContainer/GaugesContainer/HBoxContainer" index="2"]
+texture = SubResource("ViewportTexture_hjbyk")
 
 [node name="WinZone" parent="." index="4"]
 position = Vector2(143, -38)

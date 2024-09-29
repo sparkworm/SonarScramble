@@ -15,6 +15,7 @@ extends TextureRect
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	texture = $MiniMap.get_texture()
 	update_timer.wait_time = update_wait_time
 	update_timer.start()
 	_on_update_timer_timeout()
