@@ -41,15 +41,18 @@ alignment = 1
 [node name="OptionsButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme = ExtResource("1_e532m")
 text = "Options"
 
 [node name="MainMenuButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("1_e532m")
 text = "Quit to Menu"
 
 [node name="QuitButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme = ExtResource("1_e532m")
 text = "Quit Game"
 
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]

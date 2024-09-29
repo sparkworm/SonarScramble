@@ -1,6 +1,48 @@
-[gd_resource type="Theme" load_steps=3 format=3 uid="uid://bfx602mu5pdlo"]
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://bfx602mu5pdlo"]
 
 [ext_resource type="Texture2D" uid="uid://1n521ahjgncu" path="res://visuals/ui/Panel002.png" id="1_413td"]
+[ext_resource type="Texture2D" uid="uid://svh7u42470ag" path="res://visuals/ui/Button001.png" id="1_yqwa2"]
+[ext_resource type="FontFile" uid="uid://dqo4xgieal6vk" path="res://visuals/ui/Retro Gaming.ttf" id="3_xrunx"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f7s63"]
+texture = ExtResource("1_yqwa2")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(0, 72, 24, 24)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rfmvr"]
+texture = ExtResource("1_yqwa2")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(0, 24, 24, 24)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kn1vt"]
+texture = ExtResource("1_yqwa2")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(0, 24, 24, 24)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2dce6"]
+texture = ExtResource("1_yqwa2")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(0, 0, 24, 24)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7ih4i"]
+texture = ExtResource("1_yqwa2")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(0, 48, 24, 24)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vj3we"]
 texture = ExtResource("1_413td")
@@ -10,4 +52,10 @@ texture_margin_right = 8.0
 texture_margin_bottom = 8.0
 
 [resource]
+default_font = ExtResource("3_xrunx")
+Button/styles/disabled = SubResource("StyleBoxTexture_f7s63")
+Button/styles/focus = SubResource("StyleBoxTexture_rfmvr")
+Button/styles/hover = SubResource("StyleBoxTexture_kn1vt")
+Button/styles/normal = SubResource("StyleBoxTexture_2dce6")
+Button/styles/pressed = SubResource("StyleBoxTexture_7ih4i")
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_vj3we")

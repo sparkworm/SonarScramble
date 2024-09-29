@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dhiyq3vdqtigr"]
+[gd_scene load_steps=4 format=3 uid="uid://dhiyq3vdqtigr"]
 
 [ext_resource type="Script" path="res://scenes/transitional/main_menu.gd" id="1_drdet"]
 [ext_resource type="PackedScene" uid="uid://bket0bpc83r0a" path="res://scenes/levels/test_level.tscn" id="2_pcpja"]
+[ext_resource type="Theme" uid="uid://bfx602mu5pdlo" path="res://visuals/ui/ui_theme.tres" id="3_b0omw"]
 
 [node name="MainMenu" type="Node"]
 script = ExtResource("1_drdet")
@@ -16,6 +17,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("3_b0omw")
 
 [node name="MarginContainer" type="MarginContainer" parent="MenuLayer/MainMenuUI"]
 layout_mode = 1
@@ -39,6 +41,7 @@ size_flags_vertical = 3
 text = "Play"
 
 [node name="HSeparator" type="HSeparator" parent="MenuLayer/MainMenuUI/MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 
@@ -48,6 +51,7 @@ size_flags_vertical = 3
 text = "Options"
 
 [node name="HSeparator2" type="HSeparator" parent="MenuLayer/MainMenuUI/MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 

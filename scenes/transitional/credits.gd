@@ -5,6 +5,6 @@ extends GameScene
 func quit_to_menu() -> void:
 	MessageBus.game_scene_changed.emit(Globals.main_menu_scene)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("menu"):
 		quit_to_menu()
