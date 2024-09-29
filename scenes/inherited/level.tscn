@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://mwyfe8vdrtsp"]
+[gd_scene load_steps=8 format=3 uid="uid://mwyfe8vdrtsp"]
 
 [ext_resource type="Script" path="res://scenes/inherited/level.gd" id="1_jr5w7"]
 [ext_resource type="PackedScene" uid="uid://b54kub8caffbr" path="res://scenes/terrain.tscn" id="2_btskq"]
@@ -6,16 +6,20 @@
 [ext_resource type="PackedScene" uid="uid://776gdghe8ftc" path="res://scenes/sonar/sonar.tscn" id="4_pa7re"]
 [ext_resource type="Theme" uid="uid://bfx602mu5pdlo" path="res://visuals/ui/ui_theme.tres" id="5_curqo"]
 [ext_resource type="PackedScene" uid="uid://pfxbewe666f6" path="res://scenes/sonar/sonar_display.tscn" id="5_fqigm"]
+[ext_resource type="PackedScene" uid="uid://c4y1sqkdcd530" path="res://scenes/speedometer/speedometer.tscn" id="7_qgi4t"]
 
 [node name="Level" type="Node"]
 script = ExtResource("1_jr5w7")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+visible = false
 zoom = Vector2(3, 3)
 
 [node name="Terrain" parent="." instance=ExtResource("2_btskq")]
+visible = false
 
 [node name="PlayerSubmarine" parent="." instance=ExtResource("3_qdnrg")]
+visible = false
 
 [node name="Sonar" parent="PlayerSubmarine" instance=ExtResource("4_pa7re")]
 
@@ -52,11 +56,23 @@ grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("5_curqo")
 
-[node name="SonarDisplay" parent="CanvasLayer/PanelContainer" node_paths=PackedStringArray("sonar") instance=ExtResource("5_fqigm")]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/PanelContainer"]
 layout_mode = 2
-sonar = NodePath("../../../PlayerSubmarine/Sonar")
+
+[node name="Speedometer" parent="CanvasLayer/PanelContainer/HBoxContainer" node_paths=PackedStringArray("player") instance=ExtResource("7_qgi4t")]
+layout_mode = 2
+player = NodePath("../../../../PlayerSubmarine")
+
+[node name="SonarDisplay" parent="CanvasLayer/PanelContainer/HBoxContainer" node_paths=PackedStringArray("sonar") instance=ExtResource("5_fqigm")]
+layout_mode = 2
+sonar = NodePath("../../../../PlayerSubmarine/Sonar")
+
+[node name="Speedometer" type="PanelContainer" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="WinZone" type="Area2D" parent="."]
+visible = false
 collision_layer = 16
 collision_mask = 2
 

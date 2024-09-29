@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4y1sqkdcd530"]
+
+[ext_resource type="Script" path="res://scenes/speedometer/speedometer.gd" id="1_kxypv"]
+[ext_resource type="Texture2D" uid="uid://dw3nyofkako6o" path="res://visuals/sprites/speedometer001.png" id="2_4yc37"]
+
+[node name="Speedometer" type="Control"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -380.0
+offset_bottom = -170.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kxypv")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(50, 50)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+texture = ExtResource("2_4yc37")
+
+[node name="SpeedLine" type="Line2D" parent="Node2D"]
+unique_name_in_owner = true
+points = PackedVector2Array(0, 0, 27.44, 0)
+width = 2.0
+default_color = Color(1, 1, 0, 0.729412)
+
+[node name="UpdateTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+
+[connection signal="timeout" from="UpdateTimer" to="." method="_on_update_timer_timeout"]
