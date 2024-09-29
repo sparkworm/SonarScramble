@@ -18,6 +18,11 @@ var minimap_scene: PackedScene = preload("res://scenes/mini_map/mini_map.tscn")
 func _ready() -> void:
 	_initialize_minimap()
 
+func _process(_delta) -> void:
+	if Input.is_action_just_pressed("menu"):
+		# TODO:  Make the game actuall pause
+		MessageBus.pause_menu_toggled.emit()
+
 func _initialize_minimap() -> void:
 	var minimap: MiniMap = minimap_scene.instantiate()
 	minimap.player = player_submarine
