@@ -42,6 +42,8 @@ Design: David Clutter
 Art: David Clutter ???
 Sound effects: ???
 Music: ???
-"
+
+Assets:
+Font: Retro Gaming by Daymarius"
 label_settings = SubResource("LabelSettings_thjlx")
 horizontal_alignment = 1
