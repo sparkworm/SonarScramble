@@ -1,2 +1,11 @@
 Font:
 	Retro Gaming by Daymarius
+
+Cursor:
+	Author: Willogram
+
+Button Texture: 
+	Author: Willogram
+
+sonar.wav:
+	digit-al on freesound.org

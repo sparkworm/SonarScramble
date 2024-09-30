@@ -1,7 +1,10 @@
-[gd_scene load_steps=4 format=4 uid="uid://hhlfpxm1fywp"]
+[gd_scene load_steps=5 format=4 uid="uid://hhlfpxm1fywp"]
 
 [ext_resource type="PackedScene" uid="uid://mwyfe8vdrtsp" path="res://scenes/inherited/level.tscn" id="1_ckw4l"]
 [ext_resource type="PackedScene" uid="uid://bkvn7iygpv3o7" path="res://scenes/transitional/credits.tscn" id="2_e0sw8"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_hjbyk"]
+viewport_path = NodePath("MiniMap")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iekje"]
 size = Vector2(30, 58)
@@ -14,6 +17,9 @@ tile_map_data = PackedByteArray("AAAAAPv/AAAEAAQAAAABAPv/AAAEAAQAAAD///v/AAAEAAQ
 
 [node name="PlayerSubmarine" parent="." index="2"]
 position = Vector2(-20, 56)
+
+[node name="MiniMap" parent="CanvasLayer/VBoxContainer/GaugesContainer/HBoxContainer" index="2"]
+texture = SubResource("ViewportTexture_hjbyk")
 
 [node name="WinZone" parent="." index="4"]
 position = Vector2(391, 138)
