@@ -1,8 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://bgqbbdpg1s1v1"]
+[gd_scene load_steps=4 format=3 uid="uid://bgqbbdpg1s1v1"]
 
 [ext_resource type="Texture2D" uid="uid://cgy2wd1800pf0" path="res://visuals/sprites/sonar_blip.png" id="1_0xj4f"]
 [ext_resource type="Script" path="res://scenes/sonar/blip.gd" id="1_g5cni"]
+[ext_resource type="AudioStream" uid="uid://bitwwty752u38" path="res://audio/sfx/blipSelect.wav" id="3_kqpm8"]
 
 [node name="Blip" type="Sprite2D"]
 texture = ExtResource("1_0xj4f")
 script = ExtResource("1_g5cni")
+
+[node name="BlipSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_kqpm8")
+max_distance = 150.0
+attenuation = 2.21913
+max_polyphony = 8
+panning_strength = 1.5

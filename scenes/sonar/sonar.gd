@@ -38,6 +38,7 @@ func scan() -> void:
 		return
 	is_scanning = true
 	scan_sound.play()
+	
 	ray.rotation = 0.0
 	ray.target_position = Vector2(ray_length, 0.0)
 	blip_timer.wait_time = scan_time / num_shots
@@ -49,6 +50,7 @@ func scan() -> void:
 func _on_blip_timer_timeout() -> void:
 	if ray.is_colliding():
 		blip_detected.emit(ray.get_collision_point() - global_position)
+		
 		#$Test_icon.position = ray.get_collision_point() - global_position
 
 func _on_scan_timer_timeout():

@@ -19,6 +19,7 @@ scale_factor = 2.0
 disable_3d = true
 transparent_bg = true
 canvas_item_default_texture_filter = 0
+audio_listener_enable_2d = true
 size = Vector2i(100, 100)
 
 [node name="Display" type="Node2D" parent="CanvasLayer"]
@@ -37,6 +38,9 @@ begin_cap_mode = 1
 
 [node name="Blips" type="Node2D" parent="CanvasLayer/Display"]
 unique_name_in_owner = true
+
+[node name="AudioListener2D" type="AudioListener2D" parent="CanvasLayer/Display"]
+current = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(100, 100)

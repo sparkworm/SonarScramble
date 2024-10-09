@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/sonar/sonar.gd" id="1_7wmg3"]
 [ext_resource type="Texture2D" uid="uid://bv28lq7jdpo8m" path="res://icon.svg" id="2_037k6"]
-[ext_resource type="AudioStream" uid="uid://d22xaxhy8caju" path="res://sounds/90340__digit-al__sonar.wav" id="3_4tmn5"]
+[ext_resource type="AudioStream" uid="uid://d22xaxhy8caju" path="res://audio/sfx/90340__digit-al__sonar.wav" id="3_4tmn5"]
 
 [node name="Sonar" type="Node2D"]
 script = ExtResource("1_7wmg3")
