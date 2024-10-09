@@ -26,7 +26,6 @@ window/size/viewport_width=480
 window/size/viewport_height=270
 window/size/mode=3
 window/stretch/mode="canvas_items"
-mouse_cursor/custom_image="res://visuals/ui/Cursor.png"
 
 [input]
 

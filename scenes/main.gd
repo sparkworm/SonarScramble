@@ -11,6 +11,10 @@ var current_scene: GameScene
 @onready var scene_transition: SceneTransition = %SceneTransition
 
 func _ready() -> void:
+	Input.set_custom_mouse_cursor(load("res://visuals/ui/CursorPointing.png"), Input.CURSOR_ARROW)
+	Input.set_custom_mouse_cursor(load("res://visuals/ui/CursorHand.png"), Input.CURSOR_DRAG)
+	Input.set_custom_mouse_cursor(load("res://visuals/ui/CursorHand.png"), Input.CURSOR_POINTING_HAND)
+	
 	current_scene = current_scene_parent.get_child(0)
 	
 	MessageBus.game_scene_changed.connect(Callable(self, "change_game_scene"))
