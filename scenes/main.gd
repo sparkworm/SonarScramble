@@ -11,9 +11,12 @@ var current_scene: GameScene
 @onready var scene_transition: SceneTransition = %SceneTransition
 
 func _ready() -> void:
-	Input.set_custom_mouse_cursor(load("res://visuals/ui/CursorPointing.png"), Input.CURSOR_ARROW)
-	Input.set_custom_mouse_cursor(load("res://visuals/ui/CursorHand.png"), Input.CURSOR_DRAG)
-	Input.set_custom_mouse_cursor(load("res://visuals/ui/CursorHand.png"), Input.CURSOR_POINTING_HAND)
+	Input.set_custom_mouse_cursor(load("res://visuals/ui/CursorPointing.png"), 
+			Input.CURSOR_ARROW)
+	Input.set_custom_mouse_cursor(load("res://visuals/ui/CursorHand.png"), 
+			Input.CURSOR_DRAG)
+	Input.set_custom_mouse_cursor(load("res://visuals/ui/CursorHand.png"), 
+			Input.CURSOR_POINTING_HAND)
 	
 	current_scene = current_scene_parent.get_child(0)
 	
@@ -22,11 +25,7 @@ func _ready() -> void:
 	MessageBus.quit_game.connect(Callable(self, "quit_game"))
 
 ## Changes the current scene to the specified scene.
-func change_game_scene(new_scene: PackedScene) -> void:
-	#current_scene_parent.remove_child(current_scene)
-	var transition_text: String = ""
-	if current_scene is Level:
-		transition_text = "Level Won!"
+func change_game_scene(new_scene: PackedScene, transition_text:="") -> void:
 	scene_transition.transition(transition_text)
 	await scene_transition.screen_covered
 	var initialized_scene: GameScene = new_scene.instantiate()

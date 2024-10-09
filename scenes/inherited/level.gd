@@ -14,6 +14,7 @@ extends GameScene
 @export var level_name: String = "Unnamed level"
 ## The level that will be loaded when this one is won
 @export var next_level: PackedScene
+@export var next_level_text: String = "Level Won!"
 
 func _ready() -> void:
 	#_initialize_minimap()
@@ -36,4 +37,4 @@ func _initialize_minimap() -> void:
 func _on_win_area_body_entered(body):
 	if body == player_submarine:
 		print("level won!")
-		MessageBus.game_scene_changed.emit(next_level)
+		MessageBus.game_scene_changed.emit(next_level, next_level_text)
