@@ -17,6 +17,8 @@ var is_scanning: bool = false
 @onready var blip_timer = $BlipTimer
 ## timer that measures how long a full scan should be
 @onready var scan_timer = $ScanTimer
+## audio stream player for the scan sound
+@onready var scan_sound: AudioStreamPlayer = $ScanSound
 
 func _ready():
 	MessageBus.player_scanned.connect(Callable(self, "scan"))
@@ -35,6 +37,7 @@ func scan() -> void:
 	if is_scanning == true:
 		return
 	is_scanning = true
+	scan_sound.play()
 	ray.rotation = 0.0
 	ray.target_position = Vector2(ray_length, 0.0)
 	blip_timer.wait_time = scan_time / num_shots
