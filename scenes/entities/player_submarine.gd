@@ -5,6 +5,7 @@ extends CharacterBody2D
 
 @onready var velocity_component = $VelocityComponent
 @onready var crash_sound: AudioStreamPlayer = $CrashSound
+@onready var engine_sound: AudioStreamPlayer = $EngineSound
 
 func _process(_delta) -> void:
 	if Input.is_action_just_pressed("scan"):
@@ -24,6 +25,12 @@ func _get_movement_direction() -> Vector2:
 	var direction: Vector2 = Vector2.ZERO
 	for controller in controllers:
 		direction += controller.get_direction()
+	if direction != Vector2.ZERO: 
+		# I DON'T KNOW WHY AN AND STATMENT DOESN'T WORK HERE
+		if not engine_sound.playing:
+			engine_sound.play()
+	else:
+		engine_sound.stop()
 	return direction.normalized()
 
 func crash(delta: float) -> void:

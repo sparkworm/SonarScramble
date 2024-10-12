@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://gpiem0035mou"]
+[gd_scene load_steps=8 format=3 uid="uid://gpiem0035mou"]
 
 [ext_resource type="Script" path="res://scenes/entities/player_submarine.gd" id="1_hk7em"]
 [ext_resource type="Texture2D" uid="uid://da4mxbp5u4hla" path="res://visuals/sprites/submarine_icon.png" id="1_ji4e7"]
 [ext_resource type="Script" path="res://scenes/components/velocity_component.gd" id="2_ia2vt"]
 [ext_resource type="PackedScene" uid="uid://bjuall2ufymh3" path="res://scenes/ui/key_press_controller.tscn" id="4_ed8ep"]
 [ext_resource type="AudioStream" uid="uid://k7yynhih51a4" path="res://audio/sfx/sub_crash.wav" id="5_kife4"]
+[ext_resource type="AudioStream" uid="uid://d1lmshcmwgtfv" path="res://audio/sfx/sub_engine_maybe.wav" id="6_o0h2o"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4l6ka"]
 radius = 6.0
@@ -28,3 +29,6 @@ script = ExtResource("2_ia2vt")
 
 [node name="CrashSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_kife4")
+
+[node name="EngineSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_o0h2o")

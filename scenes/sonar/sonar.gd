@@ -37,7 +37,7 @@ func scan() -> void:
 	if is_scanning == true:
 		return
 	is_scanning = true
-	scan_sound.play()
+	scan_sound.play(0.2)
 	
 	ray.rotation = 0.0
 	ray.target_position = Vector2(ray_length, 0.0)
