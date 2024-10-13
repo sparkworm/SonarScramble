@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://3d1bx4l8ymr8"]
+[gd_scene load_steps=6 format=3 uid="uid://3d1bx4l8ymr8"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_pm0q6"]
 [ext_resource type="PackedScene" uid="uid://dhiyq3vdqtigr" path="res://scenes/transitional/main_menu.tscn" id="2_ik4dj"]
 [ext_resource type="PackedScene" uid="uid://b6s8t0kcnu8e1" path="res://scenes/ui/pause_menu.tscn" id="4_1rv61"]
 [ext_resource type="PackedScene" uid="uid://fn3ni7n87hm2" path="res://scenes/transitional/scene_transition.tscn" id="4_ajpai"]
+[ext_resource type="PackedScene" uid="uid://dnyngkntt5que" path="res://scenes/sound_manager.tscn" id="5_sou7u"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_pm0q6")
@@ -28,4 +29,7 @@ anchor_bottom = 0.5
 layer = 3
 
 [node name="SceneTransition" parent="TransitionLayer" instance=ExtResource("4_ajpai")]
+unique_name_in_owner = true
+
+[node name="SoundManager" parent="." instance=ExtResource("5_sou7u")]
 unique_name_in_owner = true

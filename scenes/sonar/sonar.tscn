@@ -19,7 +19,7 @@ visible = false
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("2_037k6")
 
-[node name="ScanSound" type="AudioStreamPlayer" parent="."]
+[node name="ScanSound" type="AudioStreamPlayer" parent="." groups=["sfx_scan"]]
 stream = ExtResource("3_4tmn5")
 max_polyphony = 2
 

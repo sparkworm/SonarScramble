@@ -12,6 +12,7 @@ var life_time
 
 func _ready() -> void:
 	var base_pitch_scale: float = blip_sound.pitch_scale
+	blip_sound.volume_db = Settings.sound_settings["sfx_scan"]
 	blip_sound.pitch_scale = lerp(base_pitch_scale-pitch_variance, 
 			base_pitch_scale+pitch_variance,
 			1 - position.length() / blip_sound.max_distance)

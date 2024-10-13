@@ -9,6 +9,7 @@ var current_scene: GameScene
 @onready var current_scene_parent: Node = $CurrentSceneParent
 @onready var pause_menu = %PauseMenu
 @onready var scene_transition: SceneTransition = %SceneTransition
+@onready var sound_manager: SoundManager = %SoundManager
 
 func _ready() -> void:
 	Input.set_custom_mouse_cursor(load("res://visuals/ui/CursorPointing.png"), 
@@ -30,8 +31,11 @@ func change_game_scene(new_scene: PackedScene, transition_text:="") -> void:
 	await scene_transition.screen_covered
 	var initialized_scene: GameScene = new_scene.instantiate()
 	current_scene.queue_free()
-	current_scene_parent.call_deferred("add_child", initialized_scene)
 	current_scene = initialized_scene
+	
+	#current_scene_parent.call_deferred("add_child", initialized_scene)
+	current_scene_parent.add_child(initialized_scene)
+	sound_manager.update()
 
 func toggle_pause_menu() -> void:
 	var is_paused = Globals.toggle_pause()

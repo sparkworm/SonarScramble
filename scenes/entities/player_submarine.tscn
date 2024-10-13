@@ -27,8 +27,8 @@ script = ExtResource("2_ia2vt")
 
 [node name="KeyPressController" parent="." instance=ExtResource("4_ed8ep")]
 
-[node name="CrashSound" type="AudioStreamPlayer" parent="."]
+[node name="CrashSound" type="AudioStreamPlayer" parent="." groups=["sfx_scan"]]
 stream = ExtResource("5_kife4")
 
-[node name="EngineSound" type="AudioStreamPlayer" parent="."]
+[node name="EngineSound" type="AudioStreamPlayer" parent="." groups=["sfx_movement"]]
 stream = ExtResource("6_o0h2o")

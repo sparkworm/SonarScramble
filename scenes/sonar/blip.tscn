@@ -8,7 +8,7 @@
 texture = ExtResource("1_0xj4f")
 script = ExtResource("1_g5cni")
 
-[node name="BlipSound" type="AudioStreamPlayer2D" parent="."]
+[node name="BlipSound" type="AudioStreamPlayer2D" parent="." groups=["sfx_scan"]]
 stream = ExtResource("3_kqpm8")
 max_distance = 150.0
 attenuation = 2.21913
