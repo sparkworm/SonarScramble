@@ -23,7 +23,7 @@ func _ready() -> void:
 func _process(_delta) -> void:
 	if Input.is_action_just_pressed("menu"):
 		# TODO:  Make the game actuall pause
-		MessageBus.pause_menu_toggled.emit()
+		MessageBus.menu_pressed.emit()
 """
 ## DEPRECATED
 func _initialize_minimap() -> void:

@@ -21,6 +21,10 @@ Globals="*res://autoload/globals.gd"
 MessageBus="*res://autoload/message_bus.gd"
 Settings="*res://autoload/settings.gd"
 
+[debug]
+
+gdscript/warnings/unused_signal=0
+
 [display]
 
 window/size/viewport_width=480

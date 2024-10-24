@@ -1,5 +1,7 @@
 extends Node
 
+signal sound_settings_updated
+
 ## The DB offset of each sound category
 var sound_settings: Dictionary = {
 	"master" : 0.0,

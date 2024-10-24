@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://btx5211u0lw8f"]
+
+[ext_resource type="Script" path="res://scenes/ui/setting_slider.gd" id="1_7qe08"]
+
+[node name="SettingSlider" type="VBoxContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_7qe08")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="HSlider" type="HSlider" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3

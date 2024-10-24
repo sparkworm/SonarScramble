@@ -1,12 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://dhiyq3vdqtigr"]
+[gd_scene load_steps=5 format=3 uid="uid://dhiyq3vdqtigr"]
 
 [ext_resource type="Script" path="res://scenes/transitional/main_menu.gd" id="1_drdet"]
 [ext_resource type="PackedScene" uid="uid://d4gdjj2oehmvc" path="res://scenes/levels/level_1.tscn" id="2_5gwsc"]
 [ext_resource type="Theme" uid="uid://bfx602mu5pdlo" path="res://visuals/ui/ui_theme.tres" id="3_b0omw"]
+[ext_resource type="PackedScene" uid="uid://c2bgbrph2keg" path="res://scenes/ui/options_menu.tscn" id="3_t0m1i"]
 
 [node name="MainMenu" type="Node"]
 script = ExtResource("1_drdet")
 first_level = ExtResource("2_5gwsc")
+options_menu = ExtResource("3_t0m1i")
 
 [node name="MenuLayer" type="CanvasLayer" parent="."]
 

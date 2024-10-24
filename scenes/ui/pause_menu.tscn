@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b6s8t0kcnu8e1"]
+[gd_scene load_steps=4 format=3 uid="uid://b6s8t0kcnu8e1"]
 
 [ext_resource type="Theme" uid="uid://bfx602mu5pdlo" path="res://visuals/ui/ui_theme.tres" id="1_e532m"]
 [ext_resource type="Script" path="res://scenes/ui/pause_menu.gd" id="1_h3lkv"]
+[ext_resource type="PackedScene" uid="uid://c2bgbrph2keg" path="res://scenes/ui/options_menu.tscn" id="2_sdwch"]
 
 [node name="PauseMenu" type="Control"]
 layout_mode = 3
@@ -11,6 +12,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_h3lkv")
+options_menu = ExtResource("2_sdwch")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
