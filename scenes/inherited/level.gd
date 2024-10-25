@@ -3,6 +3,7 @@ class_name Level
 extends GameScene
 
 #var minimap_scene: PackedScene = preload("res://scenes/mini_map/mini_map.tscn")
+var pause_menu: PackedScene = preload("res://scenes/ui/pause_menu.tscn")
 
 ## The player
 @onready var player_submarine = $PlayerSubmarine
@@ -16,14 +17,29 @@ extends GameScene
 @export var next_level: PackedScene
 @export var next_level_text: String = "Level Won!"
 
+var is_paused: bool = false
+
 func _ready() -> void:
 	#_initialize_minimap()
 	pass
 
 func _process(_delta) -> void:
 	if Input.is_action_just_pressed("menu"):
-		# TODO:  Make the game actuall pause
-		MessageBus.menu_pressed.emit()
+		if not is_paused:
+			MessageBus.menu_opened.emit(pause_menu)
+			toggle_pause()
+		else:
+			print(Globals.menu_depth)
+			MessageBus.top_menu_closed.emit()
+			if Globals.menu_depth < 1:
+				toggle_pause()
+
+# TODO: Make level pause
+func toggle_pause() -> bool:
+	is_paused = not is_paused
+	print("is_paused: ", is_paused)
+	return is_paused
+
 """
 ## DEPRECATED
 func _initialize_minimap() -> void:

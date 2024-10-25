@@ -5,7 +5,7 @@ extends GameScene
 @export var options_menu: PackedScene
 
 func _on_play_button_pressed() -> void:
-	MessageBus.game_scene_changed.emit(first_level)
+	MessageBus.game_scene_changed.emit(first_level, "")
 
 func _on_options_button_pressed() -> void:
 	MessageBus.menu_opened.emit(options_menu)
