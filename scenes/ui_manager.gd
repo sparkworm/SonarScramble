@@ -24,14 +24,12 @@ func _ready() -> void:
 ## [br]
 ## THIS DOES NOT OPEN PAUSE MENU
 func open_menu(menu: PackedScene) -> void:
-	print("opening window")
 	var new_menu = menu.instantiate()
 	menu_array.append(new_menu)
 	ui_parent.add_child(new_menu)
 	Globals.menu_depth += 1
 
 func close_outer_menu() -> void:
-	print("closing outer window")
 	var removed_menu = menu_array[menu_array.size()-1]
 	ui_parent.remove_child(removed_menu)
 	menu_array.remove_at(menu_array.size()-1)

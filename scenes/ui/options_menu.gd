@@ -18,10 +18,10 @@ func create_volume_sliders() -> void:
 		setting_slider.text = sound
 		setting_slider.min_val = -50
 		setting_slider.max_val = 50
-		setting_slider.set_value(Settings.sound_settings[sound])
 		setting_slider.value_changed.connect(\
 				Callable(self, "update_sound_settings").bind(sound))
 		%OptionContainer.add_child(setting_slider)
+		setting_slider.set_value(Settings.sound_settings[sound])
 
 func update_sound_settings(new_value: float, sound: String) -> void:
 	Settings.sound_settings[sound] = new_value

@@ -37,7 +37,6 @@ func _process(_delta) -> void:
 # TODO: Make level pause
 func toggle_pause() -> bool:
 	is_paused = not is_paused
-	print("is_paused: ", is_paused)
 	return is_paused
 
 """
@@ -52,5 +51,4 @@ func _initialize_minimap() -> void:
 ## called when something enters the win zone
 func _on_win_area_body_entered(body):
 	if body == player_submarine:
-		print("level won!")
 		MessageBus.game_scene_changed.emit(next_level, next_level_text)
